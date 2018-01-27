@@ -1,0 +1,19 @@
+<mat-card class="mt-20">
+  <mat-card-title>Create Quote</mat-card-title>
+  <hr>
+  <mat-card-content>
+    <div fxLayout="column">
+      <mat-form-field>
+        <textarea matInput placeholder="Enter Quote" name="content" [(ngModel)]="content"></textarea>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-select placeholder="Select Author" name="authorId" [(ngModel)]="authorId">
+          <mat-option *ngFor="let author of authors" [value]="author.id">{{author.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" (click)="saveQuote()">Save Quote</button>
+    </div>
+  </mat-card-content>
+</mat-card>
